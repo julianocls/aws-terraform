@@ -25,9 +25,3 @@ resource "null_resource" "move_private_key" {
     command = "mv ${path.module}/.terraform/ec2-key.pem ~/.ssh/ec2-key.pem"
   }
 }
-
-# Exibe a chave privada como saída (mas não será exibida no terminal devido ao "sensitive = true")
-output "private_key" {
-  value     = local_file.private_key.content
-  sensitive = true
-}

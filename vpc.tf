@@ -83,28 +83,3 @@ resource "aws_security_group" "ec2" {
     Name = "ec2-sg"
   }
 }
-
-# Criar Grupos de Segurança Postgres RDS
-resource "aws_security_group" "postgres" {
-  vpc_id      = aws_vpc.main.id
-  name_prefix = "allow-postgres"
-
-  ingress {
-    from_port   = 5432
-    to_port     = 5432
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "postgres-sg"
-  }
-}
-

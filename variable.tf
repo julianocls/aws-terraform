@@ -5,13 +5,6 @@ variable "region" {
   default     = "us-east-1"
 }
 
-# Variáveis
-variable "availability_zones" {
-  description = "Lista de zonas de disponibilidade na região"
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
-}
-
 # Variável para o tipo da instância
 variable "instance_type" {
   description = "Tipo da instância EC2"
@@ -26,13 +19,18 @@ variable "ami" {
   default     = "ami-0166fe664262f664c"
 }
 
-# Password Postgres
-# variable "db_password_postgres" {
-#   type      = string
-#   sensitive = true
-# }
+variable "instance_tags" {
+  type        = map(string)
+  description = ""
+  default = {
+    Name    = "Amazon Linux"
+    Project = "Curso AWS com terraform"
+  }
+}
 
-# Nome da app
-variable "app_name" {
-  default = "aws-project"
+# Variáveis
+variable "availability_zones" {
+  description = "Lista de zonas de disponibilidade na região"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b"]
 }

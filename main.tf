@@ -4,5 +4,6 @@ terraform {
 
 # Regiao do provider
 provider "aws" {
-  region = var.region
+  region  = var.region
+  profile = "curso-aws"
 }
