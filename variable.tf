@@ -1,31 +1,30 @@
+# Variavel para definir o ambiente
+variable "environment" {
+  description = "Ambiente de execução"
+  type        = string
+}
+
 # Variável para a região da AWS
-variable "region" {
+variable "aws_region" {
   description = "Região onde a instância será criada"
   type        = string
-  default     = "us-east-1"
 }
 
 # Variável para o tipo da instância
 variable "instance_type" {
   description = "Tipo da instância EC2"
   type        = string
-  default     = "t2.micro"
 }
 
 # AMI instancia EC2
-variable "ami" {
+variable "instance_ami" {
   description = "AMI da Instância EC2"
   type        = string
-  default     = "ami-0166fe664262f664c"
 }
 
 variable "instance_tags" {
   type        = map(string)
   description = ""
-  default = {
-    Name    = "Amazon Linux"
-    Project = "Curso AWS com terraform"
-  }
 }
 
 # Variáveis

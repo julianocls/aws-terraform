@@ -1,6 +1,6 @@
 # Configura instância EC2
 resource "aws_instance" "web" {
-  ami           = var.ami
+  ami           = var.instance_ami
   instance_type = var.instance_type
   subnet_id     = aws_subnet.main[0].id
   key_name      = aws_key_pair.ec2_key_pair.key_name
